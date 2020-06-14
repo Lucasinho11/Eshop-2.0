@@ -1,0 +1,148 @@
+
+body{
+    margin: 0;
+    background-color: #292F39;
+    color: white;
+    font-family: 'Cantarell';
+}
+/*navbar*/
+a{
+    text-decoration: none;
+    color: white;
+}
+nav{
+    background-color: #0386C2;
+    display: flex;
+    height: 60px;
+    align-items: center;
+    justify-content: space-around;
+    flex-wrap: wrap;
+}
+.logo{
+    font-size: 40px;
+    font-family: "Bangers";
+}
+.menu{
+    display: flex;
+    font-size: 20px;
+    flex-direction: row;
+}
+.menu a{
+    margin-left: 40px;
+}
+.menu a:hover{
+    border-bottom: #7FC7A7 2px solid;
+}
+
+.details{
+    font-size: 15px;
+    display: flex;
+}
+details > summary{
+    list-style: none;
+    border: none;
+}
+details > summary::-webkit-details-marker {
+    display: none;
+  }
+summary{
+    margin-left: 40px;
+}
+summary:hover{
+    border-bottom: #7FC7A7 2px solid;
+}
+.icones:first-child{
+    align-content: flex-end;
+}
+.icones{
+    display: flex;
+    
+}
+.icones i{
+    color: white;
+    font-size: 30px;
+    padding-right:40px;
+}
+.icones i a {
+    display: none;
+}
+/* .submenu{
+    display: none;
+}
+.genre:hover > .submenu{
+    display: block;
+} */
+.fa-user{
+    padding-left: 40px;
+}
+.fa-user:hover > .register{
+    display: block;
+}
+.fa-user:hover > .login{
+    display: block;
+}
+.register{
+    font-size: 10px;
+    padding-top: 10px;
+}
+.login{
+    font-size: 10px;
+}
+summary{
+    font-size:20px;
+}
+details{
+    font-size: 10px;;
+}
+/*footer*/
+footer{
+    background-color: #0386C2;
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: space-around;
+}
+.fa-envelope{
+    font-size: 40px;
+    color: white;
+}
+.contact{
+    text-align: center;
+    padding-bottom: 20px;
+}
+.contact h1{
+    font-size: 20px;
+}
+.contact a{
+    font-size: 10px;
+}
+.social{
+    text-align: center;
+}
+.social h1{
+    font-size: 20px;
+}
+.social i{
+    font-size: 40px;
+}
+.delivery{
+    text-align: center;
+}
+.delivery h1{
+    font-size: 20px;
+}
+.fa-truck{
+    font-size: 40px;
+}
+.delivery p{
+    font-size: 10px;
+}
+.payment{
+    text-align: center;
+}
+.payment h1{
+    font-size: 20px;
+}
+.payment img{
+    height: 60px;
+}
