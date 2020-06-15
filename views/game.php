@@ -1,7 +1,7 @@
 <?php require('partials/menu.php');?>
 <link href="./assets/css/game.css" rel="stylesheet">
 <?php foreach($products as $product): ?>
-  <div class="product" onmouseover="document.getElementsByClassName('game_desc')[4].style.display='flex'" onmouseout="document.getElementsByClassName('game_desc')[4].style.display='none'">
+  <div class="product">
       <a href="index.php?p=product&product_id=<?= $product['id'] ?>">
       <?= $product['name'] ?><br>
         <?php foreach($imagesGame as $ig):?>

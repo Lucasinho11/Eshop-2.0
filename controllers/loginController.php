@@ -2,11 +2,11 @@
 require_once 'models/Login.php';
 require_once 'models/Category.php';
 session_start();
-session_destroy();
 
 $parentsCategories = getParentsCategories();
 
 if (isset($_GET['action']) && $_GET['action'] == 'disconnect'){
+    session_destroy();
     unset($_SESSION['user']);
 }
 
@@ -18,8 +18,16 @@ if(!empty($_POST)){
         $user = login($_POST['email'],$_POST['password']);
         if($user != false){
             $_SESSION['user'] = $user['first_name'];
-            session_start();
-            
+            if($user['is_admin'] == true){
+                header('Location:admin/index.php?action=connected');
+                echo'salut'. $_SESSION['user'];
+                echo '<a href="?action=disconnect">Déconnexion !</a>';
+            }
+            else{
+                header('Location:index.php?action=connected');
+                echo'salut'. $_SESSION['user'];
+                echo '<a href="?action=disconnect">Déconnexion !</a>';
+            }
         }
         else{
             echo'Non valide';
@@ -29,9 +37,8 @@ if(!empty($_POST)){
 }?>
 
 <?php if(isset($_SESSION['user'])):?>
-    <?php header('Location:?action=connected');?>
     salut <?= $_SESSION['user']?>
-    <a href="?action=disconnect">Déconnexion !</a>
-    <?php endif; ?>
+   
+<?php endif; ?>
 <?php include 'views/login.php';?>
     

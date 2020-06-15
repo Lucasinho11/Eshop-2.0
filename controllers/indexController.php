@@ -7,4 +7,5 @@ $_GET['category_id'] = 0;
 
 $categories = getCategories();
 $parentsCategories = getParentsCategories();
+
 include 'views/index.php';

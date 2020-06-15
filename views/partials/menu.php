@@ -21,14 +21,16 @@
                         <?php endforeach;?>
                 
                 </details>
-                <a href="index.php">Questions</a>  
+                <a href="index.php">Questions</a> 
+            </div> 
             <div class="icones">
-            <i class="fas fa-user"><br>
-                <a href="index.php?p=register" class="register">Click here to register </a><br>
-                <a href="index.php?p=login" class="login">Click here to connect </a><br></i></a>
-            <i class="fas fa-star"></i>
-            <i class="fas fa-shopping-cart"></i>
+                <i class="fas fa-user"><br>
+                    <a href="index.php?p=register" class="register">register </a><br>
+                    <a href="index.php?p=login" class="login">connect </a><br></i></a>
+                <i class="fas fa-star"></i>
+                <i class="fas fa-shopping-cart"></i>
             </div>
+            
         </nav>
         
     </body>
