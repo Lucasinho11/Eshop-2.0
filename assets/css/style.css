@@ -76,6 +76,7 @@ summary:hover{
 .fa-user{
     padding-left: 40px;
 }
+
 .fa-user:hover > .register{
     display: block;
 }

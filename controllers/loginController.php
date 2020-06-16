@@ -6,8 +6,9 @@ session_start();
 $parentsCategories = getParentsCategories();
 
 if (isset($_GET['action']) && $_GET['action'] == 'disconnect'){
-    session_destroy();
+    
     unset($_SESSION['user']);
+    session_destroy();
 }
 
 if(!empty($_POST)){

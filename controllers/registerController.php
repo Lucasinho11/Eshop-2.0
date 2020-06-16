@@ -1,9 +1,5 @@
 <?php
 
-if(!isset($_GET['register']) || !ctype_digit($_GET['register'])){
-  header('Location:index.php');
-  exit;
-}
 
 require_once 'models/Register.php';
 require_once 'models/Category.php';

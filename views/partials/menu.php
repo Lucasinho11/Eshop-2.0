@@ -25,8 +25,13 @@
             </div> 
             <div class="icones">
                 <i class="fas fa-user"><br>
+                <?php if(!isset($_SESSION['user'])):?>
                     <a href="index.php?p=register" class="register">register </a><br>
                     <a href="index.php?p=login" class="login">connect </a><br></i></a>
+                <?php else:?>
+                    <a href="?action=disconnect" class="register">Déconnexion !</a><br>
+                 <?php endif;?>
+
                 <i class="fas fa-star"></i>
                 <i class="fas fa-shopping-cart"></i>
             </div>
