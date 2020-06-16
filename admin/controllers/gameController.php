@@ -13,9 +13,7 @@ elseif($_GET['action'] == 'new'){
 }
 
 elseif($_GET['action'] == 'add'){
-    var_dump($_FILES);
-    var_dump($_POST);
-    die();
+
 	if(empty($_POST['name']) || empty($_POST['parent_id']) || empty($_FILES['image']['tmp_name'])){
 		
 		if(empty($_POST['name'])){

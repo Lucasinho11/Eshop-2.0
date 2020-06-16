@@ -20,6 +20,9 @@ if(isset($_GET['p'])):
         case 'login':
             require 'controllers/loginController.php';
             break;
+        case 'user':
+            require 'controllers/userController.php';
+            break;    
         default :
             require 'controllers/indexController.php';
     endswitch;

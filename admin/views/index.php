@@ -1,13 +1,8 @@
 index admin
-<?php
 
 
-echo'<a href="?action=disconnect">Déconnexion !</a>';
-// if($_GET['action'] == 'disconnect'){
-//     session_destroy();
-//     header('Location:../index.php?action=disconnected');
-// }
-// ?>
+<a href="../index.php?p=login&action=disconnect">Déconnexion</a>
+
 <?php if(isset($_SESSION['user'])):?>
     salut <?= $_SESSION['user']?>
    

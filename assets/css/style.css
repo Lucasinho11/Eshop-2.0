@@ -77,19 +77,19 @@ summary:hover{
     padding-left: 40px;
 }
 
-.fa-user:hover > .register{
+/* .fa-user:hover > .register{
     display: block;
-}
-.fa-user:hover > .login{
+} */
+/* .fa-user:hover > .login{
     display: block;
-}
-.register{
+} */
+/* .register{
     font-size: 10px;
     padding-top: 10px;
 }
 .login{
     font-size: 10px;
-}
+} */
 summary{
     font-size:20px;
 }

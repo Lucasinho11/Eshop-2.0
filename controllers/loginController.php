@@ -1,7 +1,7 @@
 <?php 
 require_once 'models/Login.php';
 require_once 'models/Category.php';
-session_start();
+
 
 $parentsCategories = getParentsCategories();
 
@@ -9,6 +9,7 @@ if (isset($_GET['action']) && $_GET['action'] == 'disconnect'){
     
     unset($_SESSION['user']);
     session_destroy();
+    header('Location:index.php');
 }
 
 if(!empty($_POST)){
