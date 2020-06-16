@@ -1,6 +1,5 @@
 <?php
 
-session_start();
 
 // pour le projet ne pas oublier de vérifier si l'utilisateur est connecté ET qu'il est admin
 //sinon le renvoyer vers la page d'accueil du site

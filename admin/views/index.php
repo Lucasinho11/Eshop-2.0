@@ -14,4 +14,5 @@ echo'<a href="?action=disconnect">Déconnexion !</a>';
 <?php endif; ?>
 <br>
 <a href="index.php?controller=categories&action=list">Gestion des categories</a><br>
-<a href="index.php?controller=products&action=list">Gestion des products</a>
+<a href="index.php?controller=products&action=list">Gestion des products</a><br>
+<a href="index.php?controller=games&action=list">Gestion des jeux</a>
