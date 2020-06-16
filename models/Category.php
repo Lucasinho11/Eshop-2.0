@@ -42,7 +42,7 @@ function getCategory($id){
     $result = $query->execute( [$id] );
 
     if($result){
-        return $query-> fetch();
+        return $category = $query-> fetch();
     }
 
     else{

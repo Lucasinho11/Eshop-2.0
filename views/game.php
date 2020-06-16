@@ -1,17 +1,22 @@
 <?php require('partials/menu.php');?>
-<link href="./assets/css/game.css" rel="stylesheet">
+<div class="products">
 <?php foreach($products as $product): ?>
-  <div class="product">
-      <a href="index.php?p=product&product_id=<?= $product['id'] ?>">
-      <?= $product['name'] ?><br>
-        <?php foreach($imagesGame as $ig):?>
-          <img src="./assets/images/<?= $ig['name']?>"><br>
-          <div class="game_desc">
-            <h1><?=$product['short_description']?></h1>
+    <div class="product">
+        <a href="index.php?p=product&product_id=<?= $product['id'] ?>">
+        <br>
+          <?php foreach($imagesGame as $ig):?>
+            <div class="image-product">
+              <img src="./assets/images/<?= $ig['name']?>"><br>
+            
+            <div class="game_desc">
+              <?=$product['short_description']?>
+            </div>
           </div>
-        <?php endforeach;?>
-      <?= $product['price'] ?> euros<br>
-      </a>
-  </div>
+          <?php endforeach;?>
+          <h1><?= $product['name'] ?></h1>
+        <?= $product['price'] ?> euros<br>
+        </a>
+    </div>
 <?php endforeach; ?>
+</div>
 <?php require('partials/footer.php');?>
