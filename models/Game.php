@@ -40,3 +40,15 @@ function getImagesGames($categoryId){
 
 return $imagesGame;
 }
+function imageSlide(){
+  $db = dbConnect();
+
+
+    $query = $db->prepare('SELECT * FROM categories WHERE parent_id IS NOT NULL ORDER BY id DESC LIMIT 3');
+
+    $result = $query->execute();
+
+    $imagesSlide = $query->fetchAll();
+
+    return $imagesSlide;
+}

@@ -8,10 +8,10 @@
 
 <h2>ici la liste complète des catégories : </h2>
 
-<a href="index.php?controller=categories&action=new">Ajouter une catégorie</a>
+<a href="index.php?p=categories&action=new">Ajouter une catégorie</a>
 
 <?php foreach($categories as $category): ?>
 	<p><?=  htmlspecialchars($category['name']) ?>  
-	<a href="index.php?controller=categories&action=edit&id=<?= $category['id'] ?>">modifier</a> 
-	<a href="index.php?controller=categories&action=delete&id=<?= $category['id'] ?>">supprimer</a></p>
+	<a href="index.php?p=categories&action=edit&id=<?= $category['id'] ?>">modifier</a> 
+	<a href="index.php?p=categories&action=delete&id=<?= $category['id'] ?>">supprimer</a></p>
 <?php endforeach; ?>

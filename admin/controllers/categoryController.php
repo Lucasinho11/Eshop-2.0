@@ -20,7 +20,7 @@ elseif($_GET['action'] == 'add'){
 		
 		
 		$_SESSION['old_inputs'] = $_POST;
-		header('Location:index.php?controller=categories&action=new');
+		header('Location:index.php?p=categories&action=new');
 		exit;
 	}
 	else{
@@ -28,7 +28,7 @@ elseif($_GET['action'] == 'add'){
 		
 		$_SESSION['messages'][] = $result ? 'categorie enregistrée !' : "Erreur lors de l'enregistrement... :(";
 		
-		header('Location:index.php?controller=categories&action=list');
+		header('Location:index.php?p=categories&action=list');
 		exit;
 	}
 }
@@ -43,13 +43,13 @@ elseif($_GET['action'] == 'edit'){
             }
         
 			$_SESSION['old_inputs'] = $_POST;
-			header('Location:index.php?controller=categories&action=edit&id=' . $_GET['id']);
+			header('Location:index.php?p=categories&action=edit&id=' . $_GET['id']);
 			exit;
 		}
 		else{
 			$result = updateCategory($_GET['id'], $_POST);
 			$_SESSION['messages'][] = $result ? 'catregory mis à jour !' : 'Erreur lors de la mise à jour... :(';
-			header('Location:index.php?controller=categories&action=list');
+			header('Location:index.php?p=categories&action=list');
 			exit;
 		}
 	}
@@ -58,12 +58,12 @@ elseif($_GET['action'] == 'edit'){
 			if(isset($_GET['id'])){
 				$category = getCategory($_GET['id']);
 				if($category == false){
-					header('Location:index.php?controller=categories&action=list');
+					header('Location:index.php?p=categories&action=list');
 					exit;
 				}
 			}
 			else{
-				header('Location:index.php?controller=categories&action=list');
+				header('Location:index.php?p=categories&action=list');
 				exit;
 			}
 		}
@@ -76,13 +76,13 @@ elseif($_GET['action'] == 'delete'){
 		$result = deleteCategory($_GET['id']);
 	}
 	else{
-		header('Location:index.php?controller=categories&action=list');
+		header('Location:index.php?p=categories&action=list');
 		exit;
 	}
 
 	$_SESSION['messages'][] = $result ? 'categorie supprimée !' : 'Erreur lors de la suppression... :(';
 	
-	header('Location:index.php?controller=categories&action=list');
+	header('Location:index.php?p=categories&action=list');
 	exit;
 }
 

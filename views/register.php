@@ -9,7 +9,7 @@
     <?php require('partials/menu.php');?>
 
 
-        <form action="" method="post">
+        <form action="" method="post" class="form-register">
             <label for="email">email *:</label>
             <input id="email" type="email" name="email" required><br>
 
@@ -28,7 +28,9 @@
             <button type="submit"> envoyer</button>
             <small>* champs obligatoires</small>
         </form><br>
-        <a href="index.php?p=login">Click here to connect </a>
+        <div class="click-to-connect">
+            Vous avez déjà un compte ? <a href="index.php?p=login">Cliquez ici pour vous connecter</a>
+        </div>
         <?php require('partials/footer.php');?>
     </body>
 </html>

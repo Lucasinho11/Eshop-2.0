@@ -11,8 +11,8 @@ require ('../helpers.php');?>
 <?php endif;?>
 
 <?php
-if(isset($_GET['controller'])){
-	switch ($_GET['controller']){
+if(isset($_GET['p'])){
+	switch ($_GET['p']){
         case 'users':
 			require 'controllers/userController.php';
 		break;

@@ -8,7 +8,7 @@
 
 ici formulaire de jeux<br><br>
 
-<form action="index.php?controller=games&action=<?= isset($game) || isset($_SESSION['old_inputs']) && $_GET['action'] != 'new' ? 'edit&id='. $_GET['id'] : 'add' ?>" method="post" enctype="multipart/form-data">
+<form action="index.php?p=games&action=<?= isset($game) || isset($_SESSION['old_inputs']) && $_GET['action'] != 'new' ? 'edit&id='. $_GET['id'] : 'add' ?>" method="post" enctype="multipart/form-data">
 
 	<label for="name">Nom :</label>
 	<input  type="text" name="name" id="name" value="<?= isset($_SESSION['old_inputs']) ? $_SESSION['old_inputs']['name'] : '' ?><?= isset($game) ? $game['name'] : '' ?>" /><br>

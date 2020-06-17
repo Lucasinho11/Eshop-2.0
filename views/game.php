@@ -9,7 +9,7 @@
               <img src="./assets/images/<?= $ig['name']?>"><br>
             
             <div class="game_desc">
-              <?=$product['short_description']?>
+              <pre><?=$product['short_description']?></pre>
             </div>
           </div>
           <?php endforeach;?>

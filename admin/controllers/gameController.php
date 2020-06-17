@@ -28,7 +28,7 @@ elseif($_GET['action'] == 'add'){
         
 
 		$_SESSION['old_inputs'] = $_POST;
-		header('Location:index.php?controller=games&action=new');
+		header('Location:index.php?p=games&action=new');
 		exit;
 	}
 	else{
@@ -36,7 +36,7 @@ elseif($_GET['action'] == 'add'){
 		
 		$_SESSION['messages'][] = $resultAdd ? 'Jeu enregistré !' : "Erreur lors de l'enregistrement ... :(";
 		
-		header('Location:index.php?controller=games&action=list');
+		header('Location:index.php?p=games&action=list');
 		exit;
 	}
 }
@@ -55,13 +55,13 @@ elseif($_GET['action'] == 'edit'){
             }
         
 			$_SESSION['old_inputs'] = $_POST;
-			header('Location:index.php?controller=games&action=edit&id=' . $_GET['id']);
+			header('Location:index.php?p=games&action=edit&id=' . $_GET['id']);
 			exit;
 		}
 		else{
 			$result = updateGame($_GET['id'], $_POST);
 			$_SESSION['messages'][] = $result ? 'jeu mis à jour !' : 'Erreur lors de la mise à jour... :(';
-			header('Location:index.php?controller=games&action=list');
+			header('Location:index.php?p=games&action=list');
 			exit;
 		}
 	}
@@ -70,12 +70,12 @@ elseif($_GET['action'] == 'edit'){
 			if(isset($_GET['id'])){
 				$game = getGame($_GET['id']);
 				if($game == false){
-					header('Location:index.php?controller=games&action=list');
+					header('Location:index.php?p=games&action=list');
 					exit;
 				}
 			}
 			else{
-				header('Location:index.php?controller=games&action=list');
+				header('Location:index.php?p=games&action=list');
 				exit;
 			}
 		}
@@ -88,13 +88,13 @@ elseif($_GET['action'] == 'delete'){
 		$result = deleteGame($_GET['id']);
 	}
 	else{
-		header('Location:index.php?controller=games&action=list');
+		header('Location:index.php?p=games&action=list');
 		exit;
 	}
 
 	$_SESSION['messages'][] = $result ? 'jeu supprimée !' : 'Erreur lors de la suppression... :(';
 	
-	header('Location:index.php?controller=games&action=list');
+	header('Location:index.php?p=games&action=list');
 	exit;
 }
 

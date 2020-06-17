@@ -1,11 +1,22 @@
 <?php require('partials/menu.php');?>
-
-<p><?= $product['name'] ?></p>
-<img src="./assets/images/<?=$images['0']['name']?>" style="width: 1000px;">
-<p><?= $product['description'] ?></p>
-<p><?= $product['price'] ?>€</p>
+<div class="contain-product">
+    <div class="product">
+        <img src="./assets/images/<?=$images['0']['name']?>" style="width: 400px;">
+    </div>
+    <div class="description-product">
+        <h1 class="product-name"><?= $product['name'] ?></h1>
+        <pre class="description"><?= $product['description'] ?></pre>
+        <h2><?= $product['price'] ?>€</h2><br>
+        <div class="add-cart">
+            <a href="index.php?p=cart&action=add">Ajouter au panier</a>
+        </div>
+    </div>
+    
+</div>
 <?php unset($images['0'])?><br>
-<?php foreach($images as $image):?>
-    <img src="./assets/images/<?= $image["name"]?>" style="width: 500px;">
-<?php endforeach;?>
+<div class="images-product">
+    <?php foreach($images as $image):?>
+        <img src="./assets/images/<?= $image["name"]?>" style="width: 700px;">
+    <?php endforeach;?>
+</div>
 <?php require('partials/footer.php');?>

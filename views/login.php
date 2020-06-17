@@ -1,5 +1,5 @@
 <?php require('partials/menu.php');?>
-<form action="" method="post">
+<form action="" method="post" class="form-login">
     <label for="email">email *:</label>
     <input id="email" type="email" name="email" required><br>
 
