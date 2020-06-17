@@ -3,6 +3,7 @@
 require('models/Game.php');
 require('models/Category.php');
 $categories = getAllCategories();
+
 if($_GET['action'] == 'list'){
 	$games = getAllGames();
 	require('views/gameList.php');
@@ -43,17 +44,13 @@ elseif($_GET['action'] == 'add'){
 
 
 elseif($_GET['action'] == 'edit'){
-	
 	if(!empty($_POST)){
-		if(empty($_POST['name']) || empty($_POST['image'])){
+		if(empty($_POST['name'])){
 		
 			if(empty($_POST['name'])){
 				$_SESSION['messages'][] = 'Le champ nom est obligatoire !';
             }
-            if(empty($_POST['image'])){
-				$_SESSION['messages'][] = 'Le champ image est obligatoire !';
-            }
-        
+            
 			$_SESSION['old_inputs'] = $_POST;
 			header('Location:index.php?p=games&action=edit&id=' . $_GET['id']);
 			exit;
@@ -86,13 +83,14 @@ elseif($_GET['action'] == 'edit'){
 elseif($_GET['action'] == 'delete'){
 	if(isset($_GET['id'])){
 		$result = deleteGame($_GET['id']);
+		
 	}
 	else{
 		header('Location:index.php?p=games&action=list');
 		exit;
 	}
 
-	$_SESSION['messages'][] = $result ? 'jeu supprimée !' : 'Erreur lors de la suppression... :(';
+	$_SESSION['messages'][] = $result ? 'jeu supprimé !' : 'Erreur lors de la suppression... :(';
 	
 	header('Location:index.php?p=games&action=list');
 	exit;

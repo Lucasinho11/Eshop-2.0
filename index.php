@@ -22,7 +22,10 @@ if(isset($_GET['p'])):
             break;
         case 'user':
             require 'controllers/userController.php';
-            break;    
+            break;  
+        case 'questions':
+            require 'views/questions.php';
+            break;  
         default :
             require 'controllers/indexController.php';
     endswitch;

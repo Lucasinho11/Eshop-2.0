@@ -21,7 +21,6 @@ ici formulaire de jeux<br><br>
 		<?php endforeach; ?>
 	
 	</select><br>
-    <input type="hidden" name="MAX_FILE_SIZE" value="30000" />
     <label for="image">image :</label>
 	<input type="file" name="image" id="image" /><br>
 	

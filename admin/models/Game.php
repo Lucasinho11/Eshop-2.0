@@ -25,18 +25,17 @@ function getGame($gameId)
 function updateGame($gameId, $informations)
 {
 	$db = dbConnect();
-	
+
 	$query = $db->prepare('UPDATE categories SET name = ?, parent_id = ? WHERE id = ?');
 	
 	$result = $query->execute(
 		[
-            htmlspecialchars($informations['name']),
+			htmlspecialchars($informations['name']),
             $informations['parent_id'],
 			$gameId,
 		]
     );
     
-	
 	return $result;
 }
 
@@ -68,9 +67,11 @@ function addGame($informations)
 function deleteGame($gameId)
 {
 	$db = dbConnect();
-	
-	//ne pas oublier de supprimer le fichier lié s'il y en un
-	//avec la fonction unlink de PHP
+	$game = getGame($_GET['id']);
+
+	if(!empty($game['image'])){
+		unlink("../assets/images/".$game['image']);
+	}
 	
 	$query = $db->prepare('DELETE FROM categories WHERE id = ?');
 	$result = $query->execute([$gameId]);

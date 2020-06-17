@@ -1,7 +1,8 @@
 <?php 
 require('models/Category.php');
 require('models/Product.php');
-
+require('models/Game.php');
+$games = getAllGames();
 if($_GET['action'] == 'list'){
 	$products = getAllProducts();
 	require('views/productList.php');

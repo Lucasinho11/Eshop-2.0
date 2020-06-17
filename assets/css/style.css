@@ -103,7 +103,7 @@ footer{
     flex-direction: row;
     flex-wrap: wrap;
     justify-content: space-around;
-    margin-top: 13%;
+    margin-top: 100vh;
 }
 .fa-envelope{
     font-size: 40px;
@@ -330,3 +330,10 @@ footer{
     font-size: 20px;
     text-align: center;
 }
+.title-question{
+    text-align: center;
+}
+.question-title, .question{
+    margin-left: 5%;
+}
+

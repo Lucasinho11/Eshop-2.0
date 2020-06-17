@@ -21,6 +21,15 @@
     <label for="price">Prix :</label>
 	<input  type="number" name="price" id="price" value="<?= isset($_SESSION['old_inputs']) ? $_SESSION['old_inputs']['price'] : '' ?><?= isset($product) ? $product['price'] : '' ?>" /><br>
 	
+	<label for="game_id">Jeu :</label>
+	<select name="game_id" id="game_id">
+		
+		<?php foreach($games as $game): ?>
+			<option value="<?= $game['id']; ?>" <?php if(isset($game)): ?>selected="selected"<?php endif; ?>><?= $game['name']; ?></option>
+		<?php endforeach; ?>
+	
+	</select><br>
+	
     <input type="submit" value="Enregistrer" />
 
 </form>

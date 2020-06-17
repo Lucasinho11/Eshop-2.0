@@ -21,7 +21,7 @@
                         <?php endforeach;?>
                 
                 </details>
-                <a href="index.php">Questions</a> 
+                <a href="index.php?p=questions">Questions</a> 
             </div> 
             <div class="icones">
                 <a href="index.php?p=user"><i class="fas fa-user"></i></a><br>

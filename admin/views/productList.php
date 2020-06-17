@@ -1,3 +1,4 @@
+<?php require 'partials/header.php';?>
 <?php if(isset($_SESSION['messages'])): ?>
 	<div>
 		<?php foreach($_SESSION['messages'] as $message): ?>
