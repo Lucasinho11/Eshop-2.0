@@ -1,8 +1,6 @@
 <?php
 
-
-// pour le projet ne pas oublier de vérifier si l'utilisateur est connecté ET qu'il est admin
-//sinon le renvoyer vers la page d'accueil du site
+session_start();
 
 require ('../helpers.php');?>
 <?php if(isset($_SESSION['user']) && $_SESSION['user']['is_admin'] == 0):?>

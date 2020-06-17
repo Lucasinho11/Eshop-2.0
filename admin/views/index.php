@@ -4,7 +4,7 @@
 <a href="../index.php?p=login&action=disconnect">Déconnexion</a>
 
 <?php if(isset($_SESSION['user'])):?>
-    salut <?= $_SESSION['user']?>
+    salut <?= $_SESSION['user']['first_name']?>
    
 <?php endif; ?>
 <br>

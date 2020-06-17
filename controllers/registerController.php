@@ -5,7 +5,7 @@ require_once 'models/Register.php';
 require_once 'models/Category.php';
 $parentsCategories = getParentsCategories();
 if(!empty($_POST)){
-    if(empty($_POST['email']) || empty($_POST['password'])){
+    if(empty($_POST['email']) || empty($_POST['password']) || empty($_POST['first_name']) || empty($_POST['last_name'])) {
         echo'champs obligatoires vides';
     }
     else{
