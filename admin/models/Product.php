@@ -37,6 +37,15 @@ function updateProduct($id, $informations)
 			$id,
 		]
 	);
+	$query = $db->prepare('UPDATE products_categories SET product_id = ?, category_id = ? WHERE product_id = ?');
+	
+	$result2 = $query->execute(
+		[
+			$id,
+			$informations['game_id'],
+			$id,
+		]
+	);
 	
 	return $result;
 }
@@ -85,6 +94,16 @@ function deleteProduct($id)
 	
 	$query = $db->prepare('DELETE FROM products WHERE id = ?');
 	$result = $query->execute([$id]);
+	$query = $db->prepare('DELETE FROM products_categories WHERE product_id = ?');
+	$result2 = $query->execute([$id]);
 	
 	return $result;
+}
+function productCategories(){
+	$db = dbConnect();
+
+    $query = $db->query('SELECT * FROM products_categories');
+	$productCategories =  $query->fetchAll();
+
+    return $productCategories;
 }

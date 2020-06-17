@@ -3,6 +3,7 @@ require('models/Category.php');
 require('models/Product.php');
 require('models/Game.php');
 $games = getAllGames();
+$productCategories = productCategories();
 if($_GET['action'] == 'list'){
 	$products = getAllProducts();
 	require('views/productList.php');
@@ -42,7 +43,8 @@ elseif($_GET['action'] == 'add'){
 }
 
 elseif($_GET['action'] == 'edit'){
-    $categories = getAllCategories();
+	$categories = getAllCategories();
+	
 	if(!empty($_POST)){
 		if(empty($_POST['name']) || empty($_POST['short_description']) || empty($_POST['description']) || empty($_POST['price'])){
 		

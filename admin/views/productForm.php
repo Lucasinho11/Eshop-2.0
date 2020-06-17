@@ -1,3 +1,4 @@
+
 <?php if(isset($_SESSION['messages'])): ?>
 	<div>
 		<?php foreach($_SESSION['messages'] as $message): ?>
@@ -25,7 +26,9 @@
 	<select name="game_id" id="game_id">
 		
 		<?php foreach($games as $game): ?>
-			<option value="<?= $game['id']; ?>" <?php if(isset($game)): ?>selected="selected"<?php endif; ?>><?= $game['name']; ?></option>
+			<?php foreach($productCategories as $productCategory): ?>
+			<option value="<?= $game['id'] ?>" <?php if(isset($game) && $game['id'] == $productCategory['category_id']): ?>selected="selected"<?php endif; ?>><?= $game['name']; ?></option>
+			<?php endforeach; ?>
 		<?php endforeach; ?>
 	
 	</select><br>
