@@ -1,6 +1,6 @@
-index admin
 
 
+<a href="../index.php">index principal</a><br>
 <a href="../index.php?p=login&action=disconnect">Déconnexion</a>
 
 <?php if(isset($_SESSION['user'])):?>

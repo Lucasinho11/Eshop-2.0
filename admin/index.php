@@ -4,8 +4,15 @@
 // pour le projet ne pas oublier de vérifier si l'utilisateur est connecté ET qu'il est admin
 //sinon le renvoyer vers la page d'accueil du site
 
-require ('../helpers.php');
+require ('../helpers.php');?>
+<?php if(isset($_SESSION['user']) && $_SESSION['user']['is_admin'] == 0):?>
+    <?php header('Location:../index.php');?>
+<?php endif;?>
+<?php if(!isset($_SESSION['user'])):?>
+    <?php header('Location:../index.php');?>
+<?php endif;?>
 
+<?php
 if(isset($_GET['controller'])){
 	switch ($_GET['controller']){
         case 'users':

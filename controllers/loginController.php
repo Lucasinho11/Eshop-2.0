@@ -19,7 +19,7 @@ if(!empty($_POST)){
     else{
         $user = login($_POST['email'],$_POST['password']);
         if($user != false){
-            $_SESSION['user'] = $user['first_name'];
+            $_SESSION['user'] = $user;
             if($user['is_admin'] == true){
                 header('Location:admin/index.php?action=connected');
                 echo'salut'. $_SESSION['user'];
