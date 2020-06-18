@@ -66,25 +66,6 @@ function addProduct($informations)
         'product_id' => $productId,
         'category_id' => $informations['game_id'],
 	]);
-	// if($result && isset($_FILES['main_image']['tmp_name'])){
-	// 	$productId = $db->lastInsertId();
-		
-	// 	$allowed_extensions = array( 'jpg' , 'jpeg' , 'gif', 'png' );
-	// 	$my_file_extension = pathinfo( $_FILES['main_image']['name'] , PATHINFO_EXTENSION);
-	// 	if (in_array($my_file_extension , $allowed_extensions)){
-	// 		$new_file_name = $productId . '.' . $my_file_extension ;
-	// 		$destination = '../assets/images/' . $new_file_name;
-	// 		$result = move_uploaded_file( $_FILES['main_image']['tmp_name'], $destination);
-			
-	// 		$db->query("INSERT INTO images (name, is_main, product_id) VALUES( :name, :is_main, :product_id)");
-	// 		$result = $query->execute([
-	// 			'name' => $informations['main_image'],
-	// 			'is_main' => 1,
-	// 			'product_id' => $productId,
-
-	// 		]);
-	// 	}
-	// }
 
 	return $result;
 }
