@@ -280,6 +280,7 @@ footer{
 }
 .description{
     font-size: 30px;
+    text-align: start;
 }
 .add-cart{
     margin-top: 10px;

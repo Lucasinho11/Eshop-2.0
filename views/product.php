@@ -8,7 +8,7 @@
         <pre class="description"><?= $product['description'] ?></pre>
         <h2><?= $product['price'] ?>€</h2><br>
         <div class="add-cart">
-            <a href="index.php?p=cart&action=add">Ajouter au panier</a>
+            <a href="index.php?p=cart&action=addProduct&product_id=<?= $product['id'] ?>">Ajouter au panier</a>
         </div>
     </div>
     

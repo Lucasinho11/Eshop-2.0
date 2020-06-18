@@ -14,10 +14,10 @@
 	
 	
 	<label for="short_description">short description :</label>
-	<input  type="text" name="short_description" id="short_description" value="<?= isset($_SESSION['old_inputs']) ? $_SESSION['old_inputs']['short_description'] : '' ?><?= isset($product) ? $product['short_description'] : '' ?>" /><br>
+	<textarea type="textarea" name="short_description" id="short_description"><?= isset($_SESSION['old_inputs']) ? $_SESSION['old_inputs']['short_description'] : '' ?><?= isset($product) ? $product['short_description'] : '' ?></textarea><br>
 	
 	<label for="description">Description :</label>
-	<input  type="text" name="description" id="description" value="<?= isset($_SESSION['old_inputs']) ? $_SESSION['old_inputs']['description'] : '' ?><?= isset($product) ? $product['description'] : '' ?>" /><br>
+	<textarea  type="textarea" name="description" id="description"><?= isset($_SESSION['old_inputs']) ? $_SESSION['old_inputs']['description'] : '' ?><?= isset($product) ? $product['description'] : '' ?></textarea><br>
 
     <label for="price">Prix :</label>
 	<input  type="number" name="price" id="price" value="<?= isset($_SESSION['old_inputs']) ? $_SESSION['old_inputs']['price'] : '' ?><?= isset($product) ? $product['price'] : '' ?>" /><br>
