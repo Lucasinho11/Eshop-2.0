@@ -77,13 +77,14 @@ function deleteProduct($id)
 	$result = $query->execute([$id]);
 	$query = $db->prepare('DELETE FROM products_categories WHERE product_id = ?');
 	$result2 = $query->execute([$id]);
-	
+	$query = $db->prepare('DELETE FROM images WHERE product_id = ?');
+	$result3 = $query->execute([$id]);
 	return $result;
 }
 function productCategories(){
 	$db = dbConnect();
 
-    $query = $db->query('SELECT * FROM products_categories');
+    $query = $db->query('SELECT * FROM products_categories LIMIT 1');
 	$productCategories =  $query->fetchAll();
 
     return $productCategories;
