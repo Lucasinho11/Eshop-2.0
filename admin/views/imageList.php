@@ -14,11 +14,16 @@
 		<div class="new">
 			<a href="index.php?p=images&action=newImage&id=<?= $_GET['id']?>">Ajouter une nouvelle image <i class="fas fa-plus"></i></a>
 
-		</div>
-		            <?php foreach($imagesProduct as $image):?>
-						<img src="../assets/images/<?= $image['name'] ?>" style="max-width: 100px;"><br>
+		</div>        <h3>Image principale :</h3>
+		            <?php foreach($mainImageProduct as $image):?>
+						<img src="../assets/images/<?= $image['name'] ?>" style="max-width: 100px; padding-top:2%;">
 						<a href="index.php?p=images&action=deleteImage&id=<?= $image['id'] ?>"><i class="fas fa-trash-alt"></i></a>
-					<?php endforeach;?>
+                    <?php endforeach;?>
+                    <h3>Images secondaires :</h3>
+                    <?php foreach($secondaryImageProduct as $image):?>
+						<img src="../assets/images/<?= $image['name'] ?>" style="max-width: 100px; padding-top:2%;">
+						<a href="index.php?p=images&action=deleteImage&id=<?= $image['id'] ?>"><i class="fas fa-trash-alt"></i></a>
+                    <?php endforeach;?>
 	</div>
 </div>
 
