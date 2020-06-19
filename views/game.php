@@ -4,6 +4,7 @@
       <div class="product">
           <a href="index.php?p=product&product_id=<?= $product['id'] ?>">
           <br>
+          
             <?php foreach($imagesGame as $ig):?>
               <div class="image-product">
                 <img src="./assets/images/<?= $ig['name']?>"><br>

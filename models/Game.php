@@ -26,7 +26,7 @@ function getImagesGames($categoryId){
     $query = $db->prepare('SELECT i.*
     FROM images i 
     INNER JOIN products_categories pc ON pc.product_id=i.product_id
-    WHERE pc.category_id = ? AND i.is_main = 1');
+    WHERE pc.category_id = ? AND i.is_main = 1 LIMIT 1');
 
     $result = $query->execute([
         $categoryId
@@ -51,4 +51,13 @@ function imageSlide(){
     $imagesSlide = $query->fetchAll();
 
     return $imagesSlide;
+}
+function getMainImage($id){
+	$db = dbConnect();
+
+    $query = $db->query('SELECT * FROM images WHERE is_main = 1 AND product_id ='. $id);
+    
+    $mainImageProduct=  $query->fetchAll();
+
+    return $mainImageProduct;
 }

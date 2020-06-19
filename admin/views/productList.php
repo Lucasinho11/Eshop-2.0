@@ -18,7 +18,7 @@
 		<?php foreach($products as $product): ?>
 			<div class="product">
 				<p><?=  htmlspecialchars($product['name']) ?>  
-				<a href="index.php?p=images&action=list&id=<?= $product['id'] ?>">test</a>
+				<a href="index.php?p=images&action=list&id=<?= $product['id'] ?>"><img src="../assets/images/photo.png" style="width: 20px;"></a>
 					<a href="index.php?p=products&action=edit&id=<?= $product['id'] ?>"><i class="fas fa-pen"></i></a> 
 					<a href="index.php?p=products&action=delete&id=<?= $product['id'] ?>"><i class="fas fa-trash-alt"></i></a></p><br>
 			</div>
