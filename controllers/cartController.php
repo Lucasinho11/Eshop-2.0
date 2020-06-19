@@ -19,11 +19,11 @@ switch($_GET['action']){
     break;
     case'display':
         $cartProducts = [];
-        foreach($_SESSION['cart'] as $cart){
-            $cartProducts[] = display($product['id']);
-        }
+        $cartProducts[] = display($product['id']);
         require('views/cart.php');
     break;
+    default :
+    require 'controllers/indexController.php';
 }
 
 

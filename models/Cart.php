@@ -13,9 +13,11 @@ function display($productId){
       );
 
       $displayProduct = $query->fetch();
-
+      foreach($_SESSION['cart'] as $cart){
+          return $displayProduct;
+        }
   
 
 
-  return $displayProduct;
+  
 }

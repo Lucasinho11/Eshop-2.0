@@ -25,7 +25,9 @@ if(isset($_GET['p'])){
 		case 'products' :
 			require 'controllers/productController.php';
 		break;
-
+		case 'images' :
+			require 'controllers/imagesController.php';
+		break;
         default :
             require 'controllers/indexController.php';
 	}

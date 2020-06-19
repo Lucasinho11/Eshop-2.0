@@ -39,7 +39,7 @@
     <i class="fas fa-shield-alt"></i>
     <h1 class="shield-title">Paiements sécurisés</h1>
   </div>
-  <div class="card">
+  <div class="card-index">
     <i class="fas fa-credit-card"></i>
     <h1 class="card-title">Satisfait ou  remboursé</h1>
   </div>
