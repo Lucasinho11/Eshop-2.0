@@ -28,6 +28,9 @@ if(isset($_GET['p'])){
 		case 'images' :
 			require 'controllers/imagesController.php';
 		break;
+		case 'users' :
+			require 'controllers/userController.php';
+		break;
         default :
             require 'controllers/indexController.php';
 	}

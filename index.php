@@ -1,6 +1,11 @@
 <?php
-session_start();
 require('helpers.php');
+session_start();
+if(!isset($_SESSION['cart'])){
+    $_SESSION['cart'] = [];
+}
+
+
 if(isset($_GET['p'])):
     switch ($_GET['p']):
         case 'category' :

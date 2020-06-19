@@ -48,7 +48,7 @@ elseif($_GET['action'] == 'edit'){
 		}
 		else{
 			$result = updateCategory($_GET['id'], $_POST);
-			$_SESSION['messages'][] = $result ? 'catregory mis à jour !' : 'Erreur lors de la mise à jour... :(';
+			$_SESSION['messages'][] = $result ? 'categorie mis à jour !' : 'Erreur lors de la mise à jour... :(';
 			header('Location:index.php?p=categories&action=list');
 			exit;
 		}

@@ -52,8 +52,6 @@ function deleteCategory($id)
 {
 	$db = dbConnect();
 	
-	//ne pas oublier de supprimer le fichier lié s'il y en un
-	//avec la fonction unlink de PHP
 	
 	$query = $db->prepare('DELETE FROM categories WHERE id = ?');
 	$result = $query->execute([$id]);

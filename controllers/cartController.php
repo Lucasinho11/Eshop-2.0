@@ -5,12 +5,13 @@ require('models/Category.php');
 $_GET['category_id'] = 0;
 $categories = getCategories();
 $parentsCategories = getParentsCategories();
-
+$productCart = [];
 switch($_GET['action']){
     case 'addProduct':
         $product = getProduct($_GET['product_id']);
-        $_SESSION['cart'][$_GET['product_id']] = $product;
-       
+        $productCart[] = $_SESSION['cart'][$_GET['product_id']] ;
+        var_dump($productCart);
+        die();
         header('Location:index.php?p=cart&action=display');
     break;
     case 'deleteProduct':
@@ -18,8 +19,9 @@ switch($_GET['action']){
     case 'updateProduct':
     break;
     case'display':
+        
         $cartProducts = [];
-        $cartProducts[] = display($product['id']);
+        $cartProducts[] = display($productCart['id']);
         require('views/cart.php');
     break;
     default :

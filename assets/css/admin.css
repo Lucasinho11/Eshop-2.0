@@ -52,3 +52,13 @@ body{
     text-align: center;
     width: 370.8px;
 }
+.users{
+    margin-top: 8%;
+}
+.user{
+    display: flex;
+    margin-top: 2%;
+    padding-left: 1%;
+    border: white 2px solid;
+    border-radius: 10px;
+}

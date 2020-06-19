@@ -16,7 +16,7 @@ elseif($_GET['action'] == 'new'){
 
 elseif($_GET['action'] == 'add'){
 	
-	if(empty($_POST['name']) || empty($_POST['short_description']) || empty($_POST['description']) || empty($_POST['price'])){
+	if(empty($_POST['name']) || empty($_POST['description']) || empty($_POST['price'])){
 		
 		if(empty($_POST['name'])){
 			$_SESSION['messages'][] = 'Le champ nom est obligatoire !';

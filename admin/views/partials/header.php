@@ -9,5 +9,6 @@
     <br>
     <a href="index.php?p=categories&action=list">Gestion des categories</a><br>
     <a href="index.php?p=products&action=list">Gestion des produits</a><br>
-    <a href="index.php?p=games&action=list">Gestion des jeux</a>
+    <a href="index.php?p=games&action=list">Gestion des jeux</a><br>
+    <a href="index.php?p=users&action=list">Gestion des users</a>
 </body>
