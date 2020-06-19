@@ -161,6 +161,7 @@ footer{
 }
 .disconnect{
     font-size: 10px;
+    margin-bottom: 25%;
 }
 /*category*/
 .card{
@@ -177,6 +178,7 @@ footer{
     flex-wrap: wrap;
     flex-direction: row;
     justify-content: space-around;
+    margin-bottom: 15%;
 }
 .title-game{
     margin-top: 88%;
@@ -200,6 +202,7 @@ footer{
     justify-content: space-around;
     flex-direction: row;
     text-align: center;
+    margin-bottom: 10%;
 }
 .product{
     text-align: center;
@@ -246,6 +249,7 @@ footer{
     font-size: 20px;
 }
 .login{
+    margin-bottom: 41%;
     margin-top: 10px;
     background-color: #7FC7A7;
     border-radius: 10px;
@@ -278,6 +282,7 @@ form{
 }
 .click-to-connect{
     text-align: center;
+    padding-bottom: 21%;
 }
 .contain-product{
     padding-top: 5%;
@@ -358,4 +363,10 @@ form{
 }
 .question-title, .question{
     margin-left: 5%;
+}
+#login{
+    margin-bottom: 31%;
+}
+.welcome{
+    text-align: center;
 }

@@ -8,7 +8,5 @@
 
     <button type="submit" id="login">Connect</button>
     
-    
-
 </form>
 <?php require('partials/footer.php');?>

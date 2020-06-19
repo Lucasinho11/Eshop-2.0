@@ -15,7 +15,7 @@ function addImage($id,$informations)
 		$allowed_extensions = array( 'jpg' , 'jpeg' , 'gif', 'png' );
 		$my_file_extension = pathinfo( $_FILES['image']['name'] , PATHINFO_EXTENSION);
 		if (in_array($my_file_extension , $allowed_extensions)){
-			$new_file_name = rand($id) . '.' . $my_file_extension ;
+			$new_file_name = rand() . '.' . $my_file_extension ;
 			$destination = '../assets/images/' . $new_file_name;
 			$result = move_uploaded_file( $_FILES['image']['tmp_name'], $destination);
 			$query = $db->prepare("INSERT INTO images (name,product_id, is_main) VALUES(:name, :product_id, :is_main)");

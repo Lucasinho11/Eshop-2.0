@@ -6,7 +6,7 @@ ici formulaire de jeux<br><br>
 	<input type="file" name="image" id="image" /><br>
 
     <label for="is_main">Image principale ?</label>
-	<input type ="checkbox" name="is_main" id="is_main"/>
+	<input type ="checkbox" name="is_main" id="is_main"/><br><br>
 		
 	<input type="submit" value="Enregistrer" />
 

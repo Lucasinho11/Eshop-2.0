@@ -10,18 +10,16 @@
 		<?php endif; ?>
 	</div>
 	<div class="products">
-		<h2>Ici la liste complète des images du produit: </h2>
-		<div class="new">
-			<a href="index.php?p=images&action=newImage&id=<?= $_GET['id']?>">Ajouter une nouvelle image <i class="fas fa-plus"></i></a>
-
-		</div>        <h3>Image principale :</h3>
+		    <h2>Ici la liste complète des images du produit: </h2>
+			<a href="index.php?p=images&action=newImage&id=<?= $_GET['id']?>"><img src="../assets/images/add.png"></a>
+             <h3>Image principale :</h3>
 		            <?php foreach($mainImageProduct as $image):?>
-						<img src="../assets/images/<?= $image['name'] ?>" style="max-width: 100px; padding-top:2%;">
+						<img src="../assets/images/<?= $image['name'] ?>" style="max-width: 150px; padding-top:2%;">
 						<a href="index.php?p=images&action=deleteImage&id=<?= $image['id'] ?>"><i class="fas fa-trash-alt"></i></a>
                     <?php endforeach;?>
                     <h3>Images secondaires :</h3>
                     <?php foreach($secondaryImageProduct as $image):?>
-						<img src="../assets/images/<?= $image['name'] ?>" style="max-width: 100px; padding-top:2%;">
+						<img src="../assets/images/<?= $image['name'] ?>" style="max-width: 150px; padding-top:2%;">
 						<a href="index.php?p=images&action=deleteImage&id=<?= $image['id'] ?>"><i class="fas fa-trash-alt"></i></a>
                     <?php endforeach;?>
 	</div>
