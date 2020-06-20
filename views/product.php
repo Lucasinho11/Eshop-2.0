@@ -7,9 +7,11 @@
         <h1 class="product-name"><?= $product['name'] ?></h1>
         <pre class="description"><?= $product['description'] ?></pre>
         <h2><?= $product['price'] ?>€</h2><br>
-        <div class="add-cart">
-            <a href="index.php?p=cart&action=addProduct&product_id=<?= $product['id'] ?>">Ajouter au panier</a>
-        </div>
+        <form action="index.php?p=cart&action=addProduct&product_id=<?= $product['id'] ?>" method="POST">
+            <label>Quantité: </label>
+            <input type="number" id="quantity" name="quantity" min="1" max="<?= $product['quantity']?>" class="quantity" required>
+                <br><button class="add-cart" type="submit">Ajouter au panier</button>
+        </form>
     </div>
     
 </div>

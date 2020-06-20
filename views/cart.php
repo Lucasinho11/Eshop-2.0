@@ -1,5 +1,7 @@
 <?php require('partials/menu.php');?>
-
-<?php foreach($cartProducts as $product): ?>
+<div class="contain-cart">
+      <?php foreach($productsCart as $product): ?>
         <?= $product['name']?>
-  <?php endforeach; ?>
+      <?php endforeach; ?>
+  </div>
+  <?= $cartProducts['qty']?>

@@ -498,6 +498,12 @@ li{
   li > a{
       padding-right: 100px;
   }
+  .contain-cart{
+      margin-top: 100px;
+  }
+  .quantity{
+      margin-bottom: 5px;
+  }
 @media (max-width: 850px){
     .test{
         display: none;
