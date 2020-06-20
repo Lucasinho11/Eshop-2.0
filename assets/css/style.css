@@ -523,6 +523,8 @@ li{
 
 .button-order{
     background-color: #7FC7A7;
+    display: flex;
+    justify-content: flex-end;
 }
 
 @media (max-width: 850px){

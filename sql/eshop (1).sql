@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: localhost:3306
--- Generation Time: Jun 20, 2020 at 09:50 PM
+-- Generation Time: Jun 20, 2020 at 10:07 PM
 -- Server version: 5.7.26
 -- PHP Version: 7.3.8
 
@@ -81,8 +81,7 @@ INSERT INTO `images` (`id`, `name`, `product_id`, `is_main`) VALUES
 (53, '1827751352.jpg', 3, 0),
 (54, '1135828285.jpg', 3, 0),
 (55, '858581195.jpg', 3, 0),
-(56, '898887657.png', 3, 0),
-(57, '795344712.png', 5, 1);
+(56, '898887657.png', 3, 0);
 
 -- --------------------------------------------------------
 
@@ -141,9 +140,7 @@ CREATE TABLE `products` (
 INSERT INTO `products` (`id`, `name`, `short_description`, `description`, `price`, `quantity`) VALUES
 (1, 'Compte niveau 121', 'Niveau 121\r\nTous les agents', '-52 agents débloqués (3 agents élite)\r\n-niveau 121  \r\n-2 black ice (Fmg-9, Aug)  \r\n-Classé diamant année 4 ', 50, 10),
 (2, 'Compte niveau 142', '-classé OR année 4\r\n-4 Skin black ice\r\n', '-niveau 142\r\n-classé OR année 4\r\n-4 Skin black ice\r\n-tous les agents années 2,3', 50, 5),
-(3, 'Compte niveau 42', 'Classé diamant en année 4', '-niveau 42\r\n-tous les agents année 3\r\n- 3 skins élites (sledge, IQ, valky)', 70, 200),
-(4, 'fdsf', 'sdf', 'sdf', 12, 2),
-(5, 'test2', ' ze', 'ze', 1, 1);
+(3, 'Compte niveau 42', 'Classé diamant en année 4', '-niveau 42\r\n-tous les agents année 3\r\n- 3 skins élites (sledge, IQ, valky)', 70, 200);
 
 -- --------------------------------------------------------
 
@@ -164,9 +161,7 @@ CREATE TABLE `products_categories` (
 INSERT INTO `products_categories` (`id`, `category_id`, `product_id`) VALUES
 (1, 3, 1),
 (2, 3, 2),
-(3, 3, 3),
-(4, 21, 4),
-(5, 22, 5);
+(3, 3, 3);
 
 -- --------------------------------------------------------
 
