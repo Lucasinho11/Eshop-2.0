@@ -76,7 +76,7 @@ switch($_GET['action']){
             $order = insertOrder($_SESSION['user'], $_GET['price']);
         endforeach;
         unset($_SESSION['cart']);
-        header('Location:index.php?p=cart&action=display');
+        header('Location:index.php');
     }
     else{
         header('Location:index.php?p=register');
