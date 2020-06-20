@@ -12,6 +12,8 @@
       </div>
       <?php endforeach; ?>
       Prix Total du panier : <?= $totalPriceCart?> €<br>
+      <div class="button-order">
         <a href="index.php?p=cart&action=insertorder&price=<?= $totalPriceCart?>">Validation du panier</a>
+      </div>
       <?php endif;?>
   </div>

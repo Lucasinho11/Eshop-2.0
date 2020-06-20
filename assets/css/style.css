@@ -521,7 +521,9 @@ li{
     font-size: 60px;
 }
 
-
+.button-order{
+    background-color: #7FC7A7;
+}
 
 @media (max-width: 850px){
     .test{
