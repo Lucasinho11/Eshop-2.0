@@ -34,7 +34,7 @@
                     ><i class="fas fa-star"></i>
                 </div>
                 <div class="icone-cart">
-                    <i class="fas fa-shopping-cart"></i>
+                <a href="index.php?p=cart&action=display"><i class="fas fa-shopping-cart"></i></a>
                 </div>
                 <div class="burger">
                     <input id="burger" type="checkbox" />

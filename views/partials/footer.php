@@ -27,7 +27,7 @@
                 <h1>Mode de paiement</h1>
                 <img src="./assets/images/CB.png">
                 <img src="./assets/images/paysafecard.png">
-                <img src="./assets/images/paypal.jpg">
+                <i class="fab fa-paypal"></i>
 
             </div>
 

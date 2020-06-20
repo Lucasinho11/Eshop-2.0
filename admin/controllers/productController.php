@@ -16,7 +16,7 @@ elseif($_GET['action'] == 'new'){
 
 elseif($_GET['action'] == 'add'){
 	
-	if(empty($_POST['name']) || empty($_POST['description']) || empty($_POST['price'])){
+	if(empty($_POST['name']) || empty($_POST['description']) || empty($_POST['price']) || empty($_POST['quantity'])){
 		
 		if(empty($_POST['name'])){
 			$_SESSION['messages'][] = 'Le champ nom est obligatoire !';
@@ -27,7 +27,9 @@ elseif($_GET['action'] == 'add'){
         if(empty($_POST['price'])){
             $_SESSION['messages'][] = 'Le champ prix est obligatoire !';
         }
-
+		if(empty($_POST['quantity'])){
+            $_SESSION['messages'][] = 'Le champ quantité est obligatoire !';
+        }
 		$_SESSION['old_inputs'] = $_POST;
 		header('Location:index.php?p=products&action=new');
 		exit;
@@ -57,7 +59,9 @@ elseif($_GET['action'] == 'edit'){
             if(empty($_POST['price'])){
                 $_SESSION['messages'][] = 'Le champ prix est obligatoire !';
             }
-            
+            if(empty($_POST['quantity'])){
+                $_SESSION['messages'][] = 'Le champ quantité est obligatoire !';
+            }
 		
 			$_SESSION['old_inputs'] = $_POST;
 			header('Location:index.php?p=products&action=edit&id=' . $_GET['id']);

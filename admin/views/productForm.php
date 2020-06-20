@@ -23,6 +23,9 @@
 		<label for="price">Prix :</label>
 		<input  type="number" name="price" id="price" value="<?= isset($_SESSION['old_inputs']) ? $_SESSION['old_inputs']['price'] : '' ?><?= isset($product) ? $product['price'] : '' ?>" /><br>
 		
+		<label for="quantity">Quantité :</label>
+		<input  type="number" name="quantity" id="quantity" value="<?= isset($_SESSION['old_inputs']) ? $_SESSION['old_inputs']['quantity'] : '' ?><?= isset($product) ? $product['quantity'] : '' ?>" /><br>
+		
 		<label for="game_id">Jeu :</label>
 		<select name="game_id" id="game_id">
 			

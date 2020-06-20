@@ -15,6 +15,7 @@ switch($_GET['action']){
                 if(!isset($_SESSION['cart'])){
                     $_SESSION['cart'] = [];
                     $_SESSION['cart']['product_id'] = [];
+                    $_SESSION['cart']['product_name'] = [];
                     $_SESSION['cart']['name'] = [];
                     $_SESSION['cart']['image'] = [];
                     $_SESSION['cart']['price'] = [];
@@ -22,7 +23,7 @@ switch($_GET['action']){
                 
                 }
                 else{
-                    addCart($_GET['product_id'], $_POST['quantity']);
+                    addCart($_GET['product_id'], $_POST['quantity'],$mainImageProduct['name']);
                     echo'yo';
                 }
                 header('Location:index.php?p=cart&action=display');
@@ -37,7 +38,8 @@ switch($_GET['action']){
             header('Location:index.php');
         }
     break;
-    case 'deleteProduct':
+    case 'delete':
+        header('Location:index.php?p=cart&action=display');
     break;
     case 'updateProduct':
     break;
@@ -45,15 +47,42 @@ switch($_GET['action']){
         if(!isset($cartProducts)){
             $cartProducts = [];
         }
-        $cartProducts ['id']= $_SESSION['cart']['product_id'];
-        $cartProducts ['qty']= $_SESSION['cart']['qty'];
+        if(!isset($_SESSION['cart'])){
+            $_SESSION['cart'] = [];
+            $_SESSION['cart']['product_id'] = [];
+            $_SESSION['cart']['product_name'] = [];
+            $_SESSION['cart']['name'] = [];
+            $_SESSION['cart']['image'] = [];
+            $_SESSION['cart']['price'] = [];
+            $_SESSION['cart']['qty'] = [];
+        
+        }
+        if(isset($_SESSION['cart'])){
+            $cartProducts ['id']= $_SESSION['cart']['product_id'];
+            $cartProducts ['name']= $_SESSION['cart']['product_name'];
+            $cartProducts ['qty']= $_SESSION['cart']['qty'];
+            $cartProducts ['image']= $_SESSION['cart']['image'];
         foreach($cartProducts as $product){
-            $product = getProduct($product);
-            $productsCart[] = display($product['id']);
-            
+            $getProduct = getProduct($product);
+            $productsCart[] = display($getProduct['id']);
+            $imageCart[] = displayImage($getProduct['id']);
         }
         require('views/cart.php');
+        }
     break;
+    case'insertorder':
+        if(isset($_SESSION['user'])){
+        foreach($_SESSION['cart'] as $session):
+            $order = insertOrder($_SESSION['user'], $_GET['price']);
+        endforeach;
+        unset($_SESSION['cart']);
+        header('Location:index.php?p=cart&action=display');
+    }
+    else{
+        header('Location:index.php?p=register');
+    }
+    break;
+
     default :
     require 'controllers/indexController.php';
 }

@@ -26,14 +26,15 @@ function updateProduct($id, $informations)
 {
 	$db = dbConnect();
 	
-	$query = $db->prepare('UPDATE products SET name = ?, short_description = ?, description = ?, price = ?  WHERE id = ?');
+	$query = $db->prepare('UPDATE products SET name = ?, short_description = ?, description = ?, price = ?, quantity = ?  WHERE id = ?');
 	
 	$result = $query->execute(
 		[
 			htmlspecialchars($informations['name']),
             $informations['short_description'],
             $informations['description'],
-            $informations['price'],
+			$informations['price'],
+			$informations['quantity'],
 			$id,
 		]
 	);
@@ -53,12 +54,13 @@ function addProduct($informations)
 {
 	$db = dbConnect();
 	
-	$query = $db->prepare("INSERT INTO products (name, short_description, description, price) VALUES( :name, :short_description, :description, :price)");
+	$query = $db->prepare("INSERT INTO products (name, short_description, description, price, quantity) VALUES( :name, :short_description, :description, :price, :quantity)");
 	$result = $query->execute([
         'name' => htmlspecialchars($informations['name']),
         'short_description' => $informations['short_description'],
         'description' => $informations['description'],
-        'price' => $informations['price'],
+		'price' => $informations['price'],
+		'quantity' => $informations['quantity'],
 	]);
 	$productId = $db->lastInsertId();
 	$query = $db->prepare("INSERT INTO products_categories (product_id, category_id) VALUES( :product_id, :category_id)");

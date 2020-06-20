@@ -52,12 +52,3 @@ function imageSlide(){
 
     return $imagesSlide;
 }
-function getMainImage($id){
-	$db = dbConnect();
-
-    $query = $db->query('SELECT * FROM images WHERE is_main = 1 AND product_id ='. $id);
-    
-    $mainImageProduct=  $query->fetchAll();
-
-    return $mainImageProduct;
-}
