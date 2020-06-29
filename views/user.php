@@ -19,7 +19,7 @@
             <a href="index.php?p=user&action=editProfile">modifier profil</a><br>
         </div>
         <div class="my-commands">
-            <a href="index.php?p=commandes">commandes</a><br>
+            <a href="index.php?p=user&action=listOrder">commandes</a><br>
         </div>
         <div class="disconnect">
             <a href="index.php?p=login&action=disconnect">Déconnexion !</a><br>

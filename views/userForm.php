@@ -1,7 +1,7 @@
 <?php require('partials/menu.php');?>
 
 
-        <form action="" method="post">
+        <form action="" method="post" class="user-form">
             <label for="email">email *:</label>
             <input id="email" type="email" name="email" value="<?=$_SESSION['user']['email']?>" required><br>
 

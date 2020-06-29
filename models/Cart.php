@@ -11,62 +11,60 @@ function display($productId){
       );
 
       $displayProduct = $query->fetch();
-      $query = $db->prepare('SELECT * FROM images WHERE is_main = 1 AND product_id = ?');
-      $result = $query->execute([
-       
-        $productId
-      ]
-      );
-      $displayImage =  $query->fetch();
-
       
           return $displayProduct;
         
 }
-function displayImage($productId){
 
-
-  $db = dbConnect();
-    $query = $db->prepare('SELECT * FROM images WHERE is_main = 1 AND product_id = ? LIMIT 1');
-    $result = $query->execute([
-     
-      $productId
-    ]
-    );
-    $displayImage =  $query->fetch();
-
-    
-        return $displayImage;
-      
-}
-
-function addCart($id,$qty, $img){
-  $_SESSION['cart']['product_id'] = $id;
-  $_SESSION['cart']['qty'] = $qty;
-  $_SESSION['cart']['image'] = $img;
-
-
-}
-function getMainImage($productId){
-	$db = dbConnect();
-
-    $query = $db->query('SELECT * FROM images WHERE is_main = 1 AND product_id ='. $productId);
-
-    $mainImageProduct =  $query->fetchAll();
-
-    return $mainImageProduct;
-  
-}
-function insertOrder($user , $totalPrice)
+function insertOrder($user)
 {
+  
 	$db = dbConnect();
-	
-	$query = $db->prepare("INSERT INTO orders (name, total_price, email) VALUES( :name, :total_price, :email)");
+	$query = $db->prepare("INSERT INTO orders (name, user_id, email) VALUES( :name, :user_id, :email)");
 	$result = $query->execute([
     'name' => $user['last_name'],
-    'total_price' => $totalPrice,
+    'user_id' => $user['id'],
     'email' => $user['email'],
 
     ]);	
 	return $result;
+}
+function orderDetails($product, $order, $price, $qty){
+  $db = dbConnect();
+  
+	$query = $db->prepare("INSERT INTO order_products (name, quantity, price, order_id) VALUES( :name, :quantity, :price, :order_id)");
+	$result = $query->execute([
+    'name' => $product['name'],
+    'quantity' => $qty,
+    'price' => $price,
+    'order_id' => $order['id'],
+
+    ]);	
+	return $result;
+
+}
+function lastInsertOrderId($userId){
+  $db = dbConnect();
+  $query = $db->prepare('SELECT id FROM orders WHERE user_id = ? ORDER BY id DESC');
+  $result = $query->execute([
+   $userId,
+
+  ]
+  );
+
+  $displayProduct = $query->fetch();
+  
+      return $displayProduct;
+}
+function updateQty($quantity, $id){
+  $db = dbConnect();
+  $query = $db->prepare('UPDATE products SET quantity = ? WHERE id = ?');
+  $updatequantity = $query->execute([
+   $quantity,
+   $id
+
+  ]
+  );
+  
+      return $updatequantity;
 }

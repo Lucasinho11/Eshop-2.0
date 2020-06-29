@@ -24,6 +24,12 @@ function getUser($id)
 }
 function addUser($informations)
 {
+	if(!isset($informations['is_admin'])){
+		$informations['is_admin'] = 0;
+	}
+	else{
+		$informations['is_admin'] = 1;
+	}
 	$db = dbConnect();
 	
 	$query = $db->prepare("INSERT INTO users (email, password, first_name, last_name, address, is_admin) VALUES(:email, :password, :first_name, :last_name, :address, :is_admin)");
@@ -49,7 +55,18 @@ function deleteUser($id)
 function updateUser($id, $informations)
 {
 	$db = dbConnect();
-	
+	if(!isset($informations['is_admin'])){
+		$informations['is_admin'] = 0;
+	}
+	else{
+		$informations['is_admin'] = 1;
+	}
+	if(empty($informations['password'])){
+        $informations['password'] = $_SESSION['user']['password'];
+    }
+    else{
+        $informations['password'] = hash('md5',$informations['password']);
+    }
 	$query = $db->prepare('UPDATE users SET email = ?, password = ?, first_name = ?, last_name = ?, address = ?, is_admin = ? WHERE id = ?');
 	
 	$result = $query->execute(

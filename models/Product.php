@@ -47,4 +47,13 @@ function getImages($productId){
     
     return $images;
 }
+function getMainImage($productId){
+    $db = dbConnect();
 
+    $query = $db->prepare('SELECT * FROM images WHERE product_id = ? AND is_main = 1');
+
+    $result = $query->execute( [$productId] );
+    $images = $query->fetch();
+    
+    return $images;
+}

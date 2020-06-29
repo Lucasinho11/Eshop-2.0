@@ -10,14 +10,12 @@ $parentsCategories = getParentsCategories();
 if(isset($_GET['action']) && $_GET['action'] == 'editProfile'){
 	
 	if(!empty($_POST)){
-		if(empty($_POST['email']) || empty($_POST['password']) || empty($_POST['first_name']) || empty($_POST['last_name']) || empty($_POST['address']) ) {
+		if(empty($_POST['email']) || empty($_POST['first_name']) || empty($_POST['last_name']) || empty($_POST['address']) ) {
 		
 			if(empty($_POST['email'])){
 				$_SESSION['messages'][] = 'Le champ email est obligatoire !';
             }
-            if(empty($_POST['password'])){
-				$_SESSION['messages'][] = 'Le champ email est obligatoire !';
-            }
+
             if(empty($_POST['first_name'])){
 				$_SESSION['messages'][] = 'Le champ prénom est obligatoire !';
             }
@@ -58,6 +56,14 @@ if(isset($_GET['action']) && $_GET['action'] == 'editProfile'){
 		require('views/userForm.php');
 	}
 
+}
+elseif(isset($_GET['action']) && $_GET['action'] == 'listOrder'){
+    $orders = getOrders($_SESSION['user']['id']);
+    require('views/orders.php');
+}
+elseif(isset($_GET['action']) && $_GET['action'] == 'details'){
+    $orderDetails = getOrdersDetails($_GET['order_id']);
+    require('views/ordersdetails.php');
 }
 else{
     include 'views/user.php';

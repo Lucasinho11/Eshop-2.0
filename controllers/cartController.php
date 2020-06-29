@@ -2,6 +2,7 @@
 require('models/Cart.php');
 require('models/Product.php');
 require('models/Category.php');
+require('models/Game.php');
 $_GET['category_id'] = 0;
 $categories = getCategories();
 $parentsCategories = getParentsCategories();
@@ -14,19 +15,13 @@ switch($_GET['action']){
             if($_POST['quantity'] <= $product['quantity'] && $_POST['quantity'] > 0){
                 if(!isset($_SESSION['cart'])){
                     $_SESSION['cart'] = [];
-                    $_SESSION['cart']['product_id'] = [];
-                    $_SESSION['cart']['product_name'] = [];
-                    $_SESSION['cart']['name'] = [];
-                    $_SESSION['cart']['image'] = [];
-                    $_SESSION['cart']['price'] = [];
-                    $_SESSION['cart']['qty'] = [];
                 
                 }
                 else{
-                    addCart($_GET['product_id'], $_POST['quantity'],$mainImageProduct['name']);
-                    echo'yo';
+                    $_SESSION['cart'][$_GET['product_id']]['quantity'] = $_POST['quantity'];
                 }
                 header('Location:index.php?p=cart&action=display');
+                exit;
             }
             else{
                 echo"<h1 style='font-size:100px; color:red;'>ne touche pas à la console petit malin</h1><br><img src='./assets/images/max.png' style='width:1000px;'>";
@@ -34,14 +29,19 @@ switch($_GET['action']){
         
         }
         else{
-            $_SESSION['messages'][] = 'Quantité non sélectionnée (ne touche pas à la console';
+            $_SESSION['messages'][] = 'Quantité non sélectionnée (ne touche pas à la console)';
             header('Location:index.php');
         }
     break;
-    case 'delete':
+    case 'deleteProduct':
+        unset($_SESSION['cart'][$_GET['product_id']]);
         header('Location:index.php?p=cart&action=display');
+        exit;
     break;
-    case 'updateProduct':
+    case 'upadateProductQty':
+        $_SESSION['cart'][$_GET['product_id']]['quantity'] = $_POST['quantity'];
+        header('Location:index.php?p=cart&action=display');
+        exit;
     break;
     case'display':
         if(!isset($cartProducts)){
@@ -49,32 +49,30 @@ switch($_GET['action']){
         }
         if(!isset($_SESSION['cart'])){
             $_SESSION['cart'] = [];
-            $_SESSION['cart']['product_id'] = [];
-            $_SESSION['cart']['product_name'] = [];
-            $_SESSION['cart']['name'] = [];
-            $_SESSION['cart']['image'] = [];
-            $_SESSION['cart']['price'] = [];
-            $_SESSION['cart']['qty'] = [];
         
         }
         if(isset($_SESSION['cart'])){
-            $cartProducts ['id']= $_SESSION['cart']['product_id'];
-            $cartProducts ['name']= $_SESSION['cart']['product_name'];
-            $cartProducts ['qty']= $_SESSION['cart']['qty'];
-            $cartProducts ['image']= $_SESSION['cart']['image'];
-        foreach($cartProducts as $product){
-            $getProduct = getProduct($product);
-            $productsCart[] = display($getProduct['id']);
-            $imageCart[] = displayImage($getProduct['id']);
+           
+        foreach($_SESSION['cart'] as $product_id => $quantity){
+            $cartProducts [] = display($product_id);
         }
         require('views/cart.php');
         }
     break;
     case'insertorder':
         if(isset($_SESSION['user'])){
-        foreach($_SESSION['cart'] as $session):
-            $order = insertOrder($_SESSION['user'], $_GET['price']);
-        endforeach;
+            $order = insertOrder($_SESSION['user']);
+            $orderId = lastInsertOrderId($_SESSION['user']['id']);
+            foreach($_SESSION['cart'] as $product_id => $quantity){
+                $cartProducts [] = display($product_id);
+            }
+            foreach($cartProducts as $product){
+
+                $price = $product['price'] * $_SESSION['cart'][$product['id']]['quantity'];
+                $orderdetails = orderDetails($product,$orderId, $price, $_SESSION['cart'][$product['id']]['quantity']);
+                $qtyRemaining = $product['quantity'] - $_SESSION['cart'][$product['id']]['quantity'];
+                $updateqty = updateQty($qtyRemaining,$product['id']);
+            }
         unset($_SESSION['cart']);
         header('Location:index.php');
     }

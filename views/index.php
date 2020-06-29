@@ -10,7 +10,7 @@
     <div class="mySlides fade">
         <div class="numbertext"></div>
         <img src="./assets/images/<?= $image['image']?>" style="width:100%">
-        <div class="text"><h1><?= $image['name']?></h1></div>
+        <div class="text"><h1><a href="index.php?p=game&category_id=<?= $image['id'] ?>"><?= $image['name']?></a></h1></div>
     </div>
   <?php endforeach;?>
 

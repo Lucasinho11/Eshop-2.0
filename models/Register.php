@@ -10,16 +10,16 @@ function emailExist(){
         
         return $emailExist = $query->fetch();
 }
-function register(){
+function register($informations){
     $db = dbConnect();
     $query = $db->prepare('INSERT INTO users (email, password, first_name, last_name, address) VALUES (?, ?, ?, ?, ?)');
             $result = $query->execute(
                 [
-                    $_POST['email'],
-                    hash('md5',$_POST['password']),
-                    $_POST['first_name'],
-                    $_POST['last_name'],
-                    $_POST['address'],
+                    $informations['email'],
+                    hash('md5',$informations['password']),
+                    $informations['first_name'],
+                    $informations['last_name'],
+                    $informations['address'],
 
 
                 ]

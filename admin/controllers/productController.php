@@ -22,7 +22,7 @@ elseif($_GET['action'] == 'add'){
 			$_SESSION['messages'][] = 'Le champ nom est obligatoire !';
         }
 		if(empty($_POST['description'])){
-            $_SESSION['messages'][] = 'Le champ Description est obligatoire !';
+            $_SESSION['messages'][] = 'Le champ description est obligatoire !';
         }
         if(empty($_POST['price'])){
             $_SESSION['messages'][] = 'Le champ prix est obligatoire !';

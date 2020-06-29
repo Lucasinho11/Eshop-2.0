@@ -170,8 +170,11 @@ footer{
 }
 .disconnect{
     font-size: 10px;
-    margin-bottom: 25%;
+    margin-bottom: 4%;
     text-align: center;
+}
+nav{
+    width: 100%;
 }
 /*category*/
 .card{
@@ -212,7 +215,7 @@ footer{
     justify-content: space-around;
     flex-direction: row;
     text-align: center;
-    margin-bottom: 10%;
+    margin-bottom: 15%;
 }
 .product{
     text-align: center;
@@ -264,7 +267,7 @@ footer{
     text-align: center;
 }
 .login{
-    margin-bottom: 41%;
+    margin-bottom: 17%;
     margin-top: 10px;
     background-color: #7FC7A7;
     border-radius: 10px;
@@ -381,6 +384,9 @@ form{
 }
 .question-title, .question{
     margin-left: 5%;
+}
+.question-last{
+    margin-bottom: 5%;
 }
 #login{
     margin-bottom: 31%;
@@ -508,11 +514,17 @@ li{
   li > a{
       padding-right: 100px;
   }
+  .contain-page-cart{
+    display: flex;
+    flex-wrap: wrap;
+    margin-left: 4%;
+    flex-direction: row;
+  }
   .contain-cart{
-      margin-top: 100px;
-      display: flex;flex-wrap: wrap;
-
-      flex-direction: row;
+      display: flex;
+      flex-wrap: wrap;
+      flex-direction: column;
+      width: 50%;
   }
   .quantity{
       margin-bottom: 5px;
@@ -523,11 +535,60 @@ li{
 
 .button-order{
     background-color: #7FC7A7;
-    display: flex;
-    justify-content: flex-end;
+    margin-bottom: 2%;
+    text-align: center;
+    width: 160px;
+    border-radius: 10px;
+    margin-bottom: 40%;
 }
+.title-cart{
+    margin-left: 4%;
+    margin-top:10% ;
+}
+.product-cart{
+    padding-bottom: 2%;
+    border-bottom: gray 2px solid;
+    width: 25%;
+}
+.product-cart > img{
+    width: 80%;
+}
+.product-summary{
+    border-bottom: 2px solid gray;
+}
+.button-order a{
 
+    padding-right: 20%;
+}
+.user-form{
+    padding-bottom: 26%;
+}
+.order-page{
+    padding-top:100px;
+    margin-left: 20px;
+}
+.retour{
+    margin-top: 10px;
+    background-color: red;
+    border-radius: 10px;
+    width: 150px;
+    text-align: center;
+    font-size: 20px;
+    margin-bottom: 2%;
+}
 @media (max-width: 850px){
+    .contain-page-cart{
+        display: flex;
+        flex-wrap: wrap;
+        margin-left: 4%;
+        flex-direction: column;
+      }
+    .user-title{
+        padding-top: 20%;
+    }
+    .disconnect{
+        margin-bottom: 300px;
+    }
     .test{
         display: none;
     }
@@ -605,5 +666,8 @@ li{
     }
     .products{
         flex-direction: column;
+    }
+    .user-form{
+        padding-bottom: 80%;
     }
 }

@@ -11,7 +11,7 @@ if(!empty($_POST)){
     else{
         $emailExist = emailExist($_POST['email']);
         if(!$emailExist){
-            register();
+            register($_POST);
             header('Location:index.php?p=login');
         }
         else{

@@ -6,7 +6,7 @@ switch($_GET['action']){
         require('views/userForm.php');
     break;
     case 'addUser':
-        if(empty($_POST['email']) || empty($_POST['first_name']) || empty($_POST['last_name']) || empty($_POST['address'])  ){
+        if(empty($_POST['email']) || empty($_POST['password']) || empty($_POST['first_name']) || empty($_POST['last_name']) || empty($_POST['address']) ) {
 		
             if(empty($_POST['email'])){
                 $_SESSION['messages'][] = 'Le champ email est obligatoire !';
@@ -19,6 +19,9 @@ switch($_GET['action']){
             }
             if(empty($_POST['address'])){
                 $_SESSION['messages'][] = 'Le champ adresse est obligatoire !';
+            }
+            if(empty($_POST['password'])){
+                $_SESSION['messages'][] = 'Le champ mdp est obligatoire !';
             }
             
             $_SESSION['old_inputs'] = $_POST;
@@ -51,7 +54,8 @@ switch($_GET['action']){
     case 'editUser':
         $user = getUser($_GET['id']);
         if(!empty($_POST)){
-            if(empty($_POST['email']) || empty($_POST['first_name']) || empty($_POST['last_name']) || empty($_POST['address'])){
+            if(empty($_POST['email']) || empty($_POST['first_name']) || empty($_POST['last_name']) || empty($_POST['address']) ) {
+		
             
                 if(empty($_POST['email'])){
                     $_SESSION['messages'][] = 'Le champ email est obligatoire !';
