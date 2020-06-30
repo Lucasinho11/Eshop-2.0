@@ -542,7 +542,10 @@ li{
     text-align: center;
     width: 160px;
     border-radius: 10px;
-    margin-bottom: 40%;
+    margin-bottom: 45%;
+}
+.link-payment{
+    font-size: 10px;
 }
 .title-cart{
     margin-left: 4%;
@@ -590,6 +593,7 @@ li{
 .products-empty{
     margin-top: 23%;
 }
+
 @media (max-width: 850px){
     .contain-page-cart{
         display: flex;
