@@ -42,8 +42,12 @@
       </div>
     </div>  
       <?php endif;?>
+      <?php if(empty($_SESSION['cart'])):?>
+        <h1 class="cart-empty">Panier vide</h1>
+      <?php endif;?>
     
   
 </div>
+      </div>
   
 <?php require('partials/footer.php')?>

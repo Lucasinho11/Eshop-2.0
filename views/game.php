@@ -19,5 +19,8 @@
           </a>
       </div>
   <?php endforeach; ?>
+  <?php if(empty($products)):?>
+    <h1 class="products-empty">Aucun produit pour le moment</h1>
+  <?php endif;?>
 </div>
 <?php require('partials/footer.php');?>

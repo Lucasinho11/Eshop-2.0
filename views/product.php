@@ -18,7 +18,7 @@
 <?php unset($images['0'])?><br>
 <div class="images-product">
     <?php foreach($images as $image):?>
-        <img src="./assets/images/<?= $image["name"]?>" style="width: 700px; height: 437.5px; margin-bottom:5%;">
+        <img src="./assets/images/<?= $image["name"]?>" style=" margin-bottom:5%;">
     <?php endforeach;?>
 </div>
 <?php require('partials/footer.php');?>

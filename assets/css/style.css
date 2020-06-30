@@ -6,6 +6,9 @@ body{
     font-family: 'Cantarell';
 }
 /*navbar*/
+pre{
+    font-family: 'Cantarell';
+}
 a{
     text-decoration: none;
     color: white;
@@ -252,7 +255,7 @@ nav{
     text-align: center;
 }
 .user-page{
-    padding-top: 10%;
+    padding-top: 13%;
     margin-left: 5%;
     padding-bottom:16%;
 
@@ -576,6 +579,17 @@ li{
     font-size: 20px;
     margin-bottom: 2%;
 }
+.images-product > img{
+    width:700px; 
+    height: 437.5px;
+}
+
+.cart-empty{
+    padding-bottom: 220%;
+}
+.products-empty{
+    margin-top: 23%;
+}
 @media (max-width: 850px){
     .contain-page-cart{
         display: flex;
@@ -669,5 +683,12 @@ li{
     }
     .user-form{
         padding-bottom: 80%;
+    }
+    .images-product > img{
+        width:350px; 
+        height: 218.75px;
+    }
+    pre{
+        width: 2px;
     }
 }
